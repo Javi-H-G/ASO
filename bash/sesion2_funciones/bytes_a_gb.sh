@@ -3,11 +3,11 @@
 gb='1073741824'
 
 bytes_a_gigas() {
-    resultado=$((bytes/gb))
-    echo "el resultado es $resultado GB"
+    echo "======================================"
+    echo "scale=2; $bytes / 1073741824" | bc
 }
 
-echo "Introduce los bytes"
+echo "Introduce los bytes a pasar en GB"
 read bytes
 
 bytes_a_gigas
