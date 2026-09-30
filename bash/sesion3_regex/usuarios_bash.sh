@@ -1,14 +1,17 @@
 #!/bin/bash
 
-echo "Usuarios con bash"
-echo "======================"
+usuarios=0
 
 while read -r linea; do
 
-    if [[ $linea =~ ${linea%%:*} ]]; then
+    if [[ $linea == *bash ]]; then
 
-        echo "$linea"
+        echo "${linea%%:*}"
+        ((usuarios++))
 
     fi
 
 done < /etc/passwd
+
+echo "----"
+echo "usuarios con bash $usuarios"
