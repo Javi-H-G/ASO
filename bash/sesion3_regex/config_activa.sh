@@ -14,7 +14,7 @@ utiles=0
 while read -r linea; do
     ((totales++))
 
-    if [[ -z "$linea" ]] || [[ $linea == \#* ]]; then
+    if [[ -z "$linea" ]] || [[ $linea =~ \#* ]]; then
         continue
     fi
 
