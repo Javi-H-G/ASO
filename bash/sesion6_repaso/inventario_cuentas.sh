@@ -2,26 +2,17 @@
 
 default='/bin/bash'
 cuentas=0
+uid=0
 
-if [[ -z $1 ]]; then
+if [ $# -gt 1 ]; then
 
-    echo "Shell no añadida, usando /bin/bash"
+    echo "Error, muchos parametros"
+    exit 1
 
-    while IFS=':' read -r usuario x uid gid desc home shell; do
+    elif [ $# -eq 1 ]; then
 
-        if [[ $linea == *$default ]]; then
 
-            echo "$linea"
-            ((cuentas++))
 
-        fi
-
-    done < /etc/passwd
-
-    echo "----"
-    echo "Cuentas listadas: $cuentas"
-
-    elif
 
 fi
 
